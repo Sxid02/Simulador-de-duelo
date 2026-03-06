@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cpv3csnn0qvia"]
+
+[ext_resource type="Script" uid="uid://cl128n41y8yyv" path="res://battle_scene.gd" id="1_ttbo7"]
+[ext_resource type="Texture2D" uid="uid://b5cg84fi1r8tn" path="res://assets/players/warrior_back.png" id="2_b278l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttbo7"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b278l"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvnqj"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[node name="BattleScene" type="Node2D" unique_id=1566559824]
+script = ExtResource("1_ttbo7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2120287036]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.00033136806
+color = Color(2.8818288e-06, 0.27939457, 0.08992682, 1)
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=976503344]
+position = Vector2(307, 377)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_b278l")
+
+[node name="EnemySprite" type="Sprite2D" parent="." unique_id=1208445616]
+position = Vector2(760, 220)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1196924409]
+
+[node name="PlayerName" type="Label" parent="CanvasLayer" unique_id=1818681646]
+offset_left = 80.0
+offset_top = 70.0
+offset_right = 120.0
+offset_bottom = 93.0
+text = "hola"
+
+[node name="EnemyName" type="Label" parent="CanvasLayer" unique_id=1249127409]
+offset_left = 850.0
+offset_top = 60.0
+offset_right = 892.0
+offset_bottom = 109.0
+text = "adios
+"
+
+[node name="PlayerHP" type="ProgressBar" parent="CanvasLayer" unique_id=1995888829]
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 260.0
+offset_bottom = 127.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ttbo7")
+value = 100.0
+
+[node name="EnemyHP" type="ProgressBar" parent="CanvasLayer" unique_id=1728900243]
+offset_left = 850.0
+offset_top = 92.0
+offset_right = 1030.0
+offset_bottom = 119.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b278l")
+value = 100.0
+
+[node name="DialogBox" type="Panel" parent="CanvasLayer" unique_id=2017850935]
+offset_left = 650.0
+offset_top = 570.0
+offset_right = 1170.0
+offset_bottom = 690.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hvnqj")
+
+[node name="DialogLabel" type="Label" parent="CanvasLayer/DialogBox" unique_id=2062856647]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = 476.0
+offset_bottom = 100.0
+autowrap_mode = 2
+
+[node name="NextArrow" type="Label" parent="CanvasLayer/DialogBox" unique_id=794027110]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 72.0
+offset_right = 504.0
+offset_bottom = 96.0
+text = "▼"
+horizontal_alignment = 2
+
+[node name="Menu" type="GridContainer" parent="CanvasLayer" unique_id=80310050]
+offset_left = 65.0
+offset_top = 570.0
+offset_right = 553.0
+offset_bottom = 694.0
+rotation = -0.0016885005
+columns = 3
+
+[node name="BtnAttack1" type="Button" parent="CanvasLayer/Menu" unique_id=705036220]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+text = "Ataque 1"
+
+[node name="BtnAttack2" type="Button" parent="CanvasLayer/Menu" unique_id=1223829294]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+text = "Ataque 2"
+
+[node name="BtnItem" type="Button" parent="CanvasLayer/Menu" unique_id=2031664613]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+text = "Item"
+
+[node name="BtnAttack3" type="Button" parent="CanvasLayer/Menu" unique_id=1040626453]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+text = "Ataque 3"
+
+[node name="BtnAttack4" type="Button" parent="CanvasLayer/Menu" unique_id=1353721277]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+text = "Ataque 4"
+
+[node name="BtnRun" type="Button" parent="CanvasLayer/Menu" unique_id=1516509021]
+layout_mode = 2
+text = "Huir
+"
+
+[node name="Timer" type="Timer" parent="." unique_id=1584423832]
+one_shot = true
